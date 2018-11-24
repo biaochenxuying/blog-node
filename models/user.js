@@ -10,7 +10,7 @@ const { argv } = require('yargs');
 const { mongoose } = require('../core/mongodb.js');
 const autoIncrement = require('mongoose-auto-increment');
 
-const userSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
 	// 名字
 	name: { type: String, required: true, default: '' },
 
@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
 	// 手机
 	phone: { type: String, default: '' },
 
+	//封面
 	img_url: { type: String, default: '' },
 
 	// 邮箱
@@ -49,11 +50,11 @@ const userSchema = new mongoose.Schema({
 });
 
 // 自增 ID 插件配置
-userSchema.plugin(autoIncrement.plugin, {
+adminSchema.plugin(autoIncrement.plugin, {
 	model: 'User',
 	field: 'id',
 	startAt: 1,
 	incrementBy: 1,
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', adminSchema);
