@@ -138,8 +138,7 @@ exports.addThirdComment = (req, res) => {
 		responseClient(res, 200, 1, '您还没登录,或者登录信息已过期，请重新登录！');
 		return;
 	}
-	let { article_id, comment_id, user_id, content } = req.body;
-
+	let { article_id, comment_id, user_id, content, to_user } = req.body;
 	Comment.findById({
 		_id: comment_id,
 	})
@@ -158,16 +157,17 @@ exports.addThirdComment = (req, res) => {
 						let item = {
 							user: userInfo,
 							content: content,
+							to_user: JSON.parse(to_user),
 						};
 						commentResult.other_comments.push(item);
 						Comment.updateOne(
 							{ _id: comment_id },
 							{
-								other_comments: commentResult,
+								other_comments: commentResult.other_comments,
 							},
 						)
 							.then(result => {
-								responseClient(res, 200, 0, '操作成功', result);
+								// responseClient(res, 200, 0, '操作成功', result);
 								Article.findOne({ _id: article_id }, (errors, data) => {
 									if (errors) {
 										console.error('Error:' + errors);
@@ -175,12 +175,12 @@ exports.addThirdComment = (req, res) => {
 									} else {
 										data.meta.comments = data.meta.comments + 1;
 										Article.updateOne({ _id: article_id }, { meta: data.meta })
-											.then(result => {
-												// console.log('result :', result);
-												responseClient(res, 200, 0, '操作成功 ！', result);
+											.then(Articleresult => {
+												console.log('result --------------:', Articleresult);
+												responseClient(res, 200, 0, '操作成功 ！', Articleresult);
 											})
 											.catch(err => {
-												console.log('err :', err);
+												console.log('err ===========:', err);
 												throw err;
 											});
 									}

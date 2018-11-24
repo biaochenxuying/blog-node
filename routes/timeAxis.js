@@ -40,7 +40,7 @@ exports.getTimeAxisList = (req, res) => {
 			console.error('Error:' + err);
 		} else {
 			responseData.count = count;
-			let fields = { title: 1, content: 1, state: 1, crate_time: 1, end_time: 1, update_time: 1 }; // 待返回的字段
+			let fields = { title: 1, content: 1, state: 1, start_time: 1, end_time: 1, update_time: 1 }; // 待返回的字段
 			let options = {
 				skip: skip,
 				limit: pageSize,

@@ -22,6 +22,7 @@ const commentSchema = new mongoose.Schema({
 	// 被赞数
 	likes: { type: Number, default: 0 },
 
+	// 用户 id
 	user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 
 	// 父评论的用户信息
@@ -42,15 +43,36 @@ const commentSchema = new mongoose.Schema({
 	// 第三者评论
 	other_comments: [
 		{
+			// 谁在评论
 			user: {
-				id: { type: mongoose.Schema.Types.ObjectId },
+				user_id: { type: mongoose.Schema.Types.ObjectId },
 
 				// 名字
 				name: { type: String, required: true, default: '' },
 
 				// 用户类型 0：博主 1：其他用户
 				type: { type: Number, default: 1 },
+
+				// 头像
+				avatar:{type: String,  default: 'user' }
 			},
+
+			// 对谁评论
+			to_user: { 
+				user_id: { type: mongoose.Schema.Types.ObjectId },
+
+				// 名字
+				name: { type: String, required: true, default: '' },
+
+				// 用户类型 0：博主 1：其他用户
+				type: { type: Number, default: 1 },
+
+				// 头像
+				avatar:{type: String,  default: 'user' }
+			},
+
+			// 被赞数
+			likes: { type: Number, default: 0 },
 
 			// content
 			content: { type: String, required: true, validate: /\S+/ },
