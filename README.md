@@ -85,7 +85,7 @@ npm start
 
 
 
-# 9. 最后
+# 9. 参考
 
 小汪也是第一次搭建 node 后端项目，也参考了其他项目。
 
@@ -93,17 +93,18 @@ npm start
 [1. nodepress](https://github.com/surmon-china/nodepress)
 [2. React-Express-Blog-Demo](https://github.com/Nealyang/React-Express-Blog-Demo)
 
-对 **全栈开发** 有兴趣的朋友，可以扫下方二维码，关注我的公众号，我会不定期更新有价值的内容。
 
-> 微信公众号：**BiaoChenXuYing**
-> 分享 前端、后端开发 等相关的技术文章，热点资源，全栈程序员的成长之路。
+# 10. 最后
+
+鉴于问问题的人有点多，小汪时间有限，处理不过来，大家可以加入 QQ 群：186045338 ，一起相互交流学习。
+
+对 **全栈开发** 有兴趣的朋友可以扫下方二维码关注我的公众号，我会不定期更新有价值的内容。
 
 关注公众号并回复 **福利** 便免费送你视频资源，绝对干货。
 
 福利详情请点击：  [免费资源分享--Python、Java、Linux、Go、node、vue、react、javaScript](https://mp.weixin.qq.com/s?__biz=MzA4MDU1MDExMg==&mid=2247483711&idx=1&sn=1ffb576159805e92fc57f5f1120fce3a&chksm=9fa3c0b0a8d449a664f36f6fdd017ac7da71b6a71c90261b06b4ea69b42359255f02d0ffe7b3&token=1560489745&lang=zh_CN#rd)
 
 ![BiaoChenXuYing](https://upload-images.jianshu.io/upload_images/12890819-091ccce387e2ea34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 
 
 
