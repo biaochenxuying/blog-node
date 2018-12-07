@@ -93,10 +93,49 @@ npm start
 [1. nodepress](https://github.com/surmon-china/nodepress)
 [2. React-Express-Blog-Demo](https://github.com/Nealyang/React-Express-Blog-Demo)
 
+# 10. 项目常见问题
 
-# 10. 最后
+## 10.1 管理员账号创建
 
-鉴于问问题的人有点多，小汪时间有限，处理不过来，大家可以加入 QQ 群：**186045338**，加群暗号：**全栈修炼** ，一起相互交流学习。
+![](https://upload-images.jianshu.io/upload_images/12890819-67861a912768e646.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+管理后台的登录账号并不是 admin/user ，也不是搭建 mongodb 数据库时创建的 user 用户，这里的账号和密码要自己创建，至于怎样创建呢？
+
+### 用 postman 调接口注册
+
+如果是本地的可以像这样子创建，如果是服务器上的，请把 url 修改一下，
+
+![](https://upload-images.jianshu.io/upload_images/12890819-67209745dbd96273.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- 1.  url 
+
+```
+http://127.0.0.1:3000/register
+```
+
+- 2. param
+```
+{
+ "name": "BiaoChenXuYing",
+ "password": "888888",
+ "email": "admin@qq.com",
+ "phone": 1380013800,
+ "type": 0,
+ "introduce":"加班到天明，学习到昏厥!!! 微信公众号：【 BiaoChenXuYing 】，分享 WEB 全栈开发等相关的技术文章，热点资源，全栈程序员的成长之路。"
+}
+```
+这里的 type 为 0 是管理员账号，为 1 时，是普通用户。
+
+# 10.2 端口
+
+本地开发时，blog-react 和 blog-node 默认启动的端口是相同的，都是 3000。
+**所以要先启动 blog-node 项目，再启动 blog-react 项目，而且 blog-react 的端口用另外一个打开。**
+
+
+
+# 11. 最后
+
+鉴于问问题的人有点多，小汪时间有限，处理不过来，大家可以加入 QQ 群：186045338 ，一起相互交流学习。
 
 对 **全栈开发** 有兴趣的朋友可以扫下方二维码关注我的公众号，我会不定期更新有价值的内容。
 
