@@ -105,7 +105,8 @@ npm start
 
 如果是本地的可以像这样子创建，如果是服务器上的，请把 url 修改一下，
 
-![](https://upload-images.jianshu.io/upload_images/12890819-67209745dbd96273.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![注册](https://upload-images.jianshu.io/upload_images/12890819-3772744f72b8ed3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 - 1.  url 
 
