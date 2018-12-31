@@ -88,6 +88,9 @@ const commentSchema = new mongoose.Schema({
 	// 状态 => 0 待审核 / 1 通过正常 / -1 已删除 / -2 垃圾评论
 	state: { type: Number, default: 1 },
 
+	// 是否已经处理过 => 1 是 / 2 否 ；新加的评论需要审核，防止用户添加 垃圾评论
+	is_handle: { type: Number, default: 2 },
+
 	// 创建日期
 	create_time: { type: Date, default: Date.now },
 

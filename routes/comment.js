@@ -6,29 +6,29 @@ import Article from '../models/article';
 //获取全部评论
 exports.getCommentList = (req, res) => {
 	let keyword = req.query.keyword || null;
-	let comment_id = req.query.comment_id || null;
+	let is_handle = parseInt(req.query.is_handle) || 0;
+	console.log('is_handle ',is_handle)
 	let pageNum = parseInt(req.query.pageNum) || 1;
 	let pageSize = parseInt(req.query.pageSize) || 10;
 	let conditions = {};
-	if (comment_id) {
-		if (keyword) {
-			const reg = new RegExp(keyword, 'i'); //不区分大小写
+	if (keyword) {
+		const reg = new RegExp(keyword, 'i'); //不区分大小写
+		if(is_handle){
 			conditions = {
-				_id: comment_id,
 				content: { $regex: reg },
+				is_handle
 			};
-		} else {
-			conditions = {
-				_id: comment_id,
-			};
-		}
-	} else {
-		if (keyword) {
-			const reg = new RegExp(keyword, 'i'); //不区分大小写
+		}else{
 			conditions = {
 				content: { $regex: reg },
 			};
 		}
+	}
+	if(is_handle){
+		conditions = {
+			is_handle
+		};
+		console.log('conditions',conditions)
 	}
 
 	let skip = pageNum - 1 < 0 ? 0 : (pageNum - 1) * pageSize;
@@ -36,6 +36,7 @@ exports.getCommentList = (req, res) => {
 		count: 0,
 		list: [],
 	};
+	
 	Comment.countDocuments(conditions, (err, count) => {
 		if (err) {
 			console.error('Error:' + err);
@@ -51,6 +52,7 @@ exports.getCommentList = (req, res) => {
 				user: 1,
 				other_comments: 1,
 				state: 1,
+				is_handle: 1,
 				create_time: 1,
 				update_time: 1,
 			};
@@ -107,7 +109,7 @@ exports.addComment = (req, res) => {
 							} else {
 								data.comments.push(commentResult._id);
 								data.meta.comments = data.meta.comments + 1;
-								Article.updateOne({ _id: article_id }, { comments: data.comments, meta: data.meta })
+								Article.updateOne({ _id: article_id }, { comments: data.comments, meta: data.meta, is_handle: 0 })
 									.then(result => {
 										responseClient(res, 200, 0, '操作成功 ！', commentResult);
 									})
@@ -164,6 +166,7 @@ exports.addThirdComment = (req, res) => {
 							{ _id: comment_id },
 							{
 								other_comments: commentResult.other_comments,
+								is_handle: 2,
 							},
 						)
 							.then(result => {
@@ -176,11 +179,11 @@ exports.addThirdComment = (req, res) => {
 										data.meta.comments = data.meta.comments + 1;
 										Article.updateOne({ _id: article_id }, { meta: data.meta })
 											.then(Articleresult => {
-												console.log('result --------------:', Articleresult);
+												// console.log('result --------------:', Articleresult);
 												responseClient(res, 200, 0, '操作成功 ！', Articleresult);
 											})
 											.catch(err => {
-												console.log('err ===========:', err);
+												// console.log('err ===========:', err);
 												throw err;
 											});
 									}
@@ -207,15 +210,16 @@ exports.addThirdComment = (req, res) => {
 
 // 管理一级评论
 exports.changeComment = (req, res) => {
-	if (!req.session.userInfo) {
-		responseClient(res, 200, 1, '您还没登录,或者登录信息已过期，请重新登录！');
-		return;
-	}
+	// if (!req.session.userInfo) {
+	// 	responseClient(res, 200, 1, '您还没登录,或者登录信息已过期，请重新登录！');
+	// 	return;
+	// }
 	let { id, state } = req.body;
 	Comment.updateOne(
 		{ _id: id },
 		{
 			state: Number(state),
+			is_handle: 1,
 		},
 	)
 		.then(result => {
@@ -229,22 +233,23 @@ exports.changeComment = (req, res) => {
 
 // 管理第三者评论
 exports.changeThirdComment = (req, res) => {
-	if (!req.session.userInfo) {
-		responseClient(res, 200, 1, '您还没登录,或者登录信息已过期，请重新登录！');
-		return;
-	}
-	let { comment_id, state, index } = req.body;
+	// if (!req.session.userInfo) {
+	// 	responseClient(res, 200, 1, '您还没登录,或者登录信息已过期，请重新登录！');
+	// 	return;
+	// }
+	let { id, state, index } = req.body;
 	Comment.findById({
-		_id: comment_id,
+		_id: id,
 	})
 		.then(commentResult => {
 			let i = index ? Number(index) : 0;
 			if (commentResult.other_comments.length) {
 				commentResult.other_comments[i].state = Number(state);
 				Comment.updateOne(
-					{ _id: comment_id },
+					{ _id: id },
 					{
-						other_comments: commentResult,
+						other_comments: commentResult.other_comments,
+						is_handle: 1,
 					},
 				)
 					.then(result => {
