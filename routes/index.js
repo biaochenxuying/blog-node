@@ -9,6 +9,7 @@ const tag = require('./tag');
 const link = require('./link');
 const category = require('./category');
 const timeAxis = require('./timeAxis');
+const project = require('./project');
 
 module.exports = app => {
 	app.post('/login', user.login);
@@ -57,4 +58,10 @@ module.exports = app => {
 	app.post('/delTimeAxis', timeAxis.delTimeAxis);
 	app.get('/getTimeAxisList', timeAxis.getTimeAxisList);
 	app.post('/getTimeAxisDetail', timeAxis.getTimeAxisDetail);
+
+	app.post('/addProject', project.addProject);
+	app.post('/updateProject', project.updateProject);
+	app.post('/delProject', project.delProject);
+	app.get('/getProjectList', project.getProjectList);
+	app.post('/getProjectDetail', project.getProjectDetail);
 };
