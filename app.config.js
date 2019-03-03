@@ -52,6 +52,22 @@ exports.AKISMET = {
 
 exports.GITHUB = {
 	username: 'biaochenxuying',
+	oauth_uri: 'https://github.com/login/oauth/authorize',
+	access_token_url: 'https://github.com/login/oauth/access_token',
+	// 获取 github 用户信息 url // eg: https://api.github.com/user?access_token=****&scope=&token_type=bearer
+	user_url: 'https://api.github.com/user',
+
+	// 请把生产环境的 redirect_url，client_id 和 client_secret 中的 "****", 换成自己创建的 OAuth App 的具体参数即可。
+	// // 生产环境
+  // redirect_url: 'http://biaochenxuying.cn/',
+  // client_id: '*****',
+	// client_secret: '*****',
+
+	// 开发环境 （参数可以直接用）
+	redirect_url: "http://localhost:3001/",
+  client_id: "502176cec65773057a9e",
+	client_secret: "65d444de381a026301a2c7cffb6952b9a86ac235",
+	
 };
 
 exports.ALIYUN = {
