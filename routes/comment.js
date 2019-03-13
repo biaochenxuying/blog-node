@@ -37,7 +37,7 @@ exports.getCommentList = (req, res) => {
     list: [],
   };
 
-  Comment.countDocuments(conditions, (err, count) => {
+  Comment.countDocuments({}, (err, count) => {
     if (err) {
       console.error('Error:' + err);
     } else {
@@ -54,7 +54,7 @@ exports.getCommentList = (req, res) => {
         state: 1,
         is_handle: 1,
         create_time: 1,
-        update_time: 1,
+        // update_time: 1,
       };
       let options = {
         skip: skip,

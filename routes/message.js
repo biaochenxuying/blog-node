@@ -39,7 +39,7 @@ exports.getMessageList = (req, res) => {
 		count: 0,
 		list: [],
 	};
-	Message.countDocuments(conditions, (err, count) => {
+	Message.countDocuments({}, (err, count) => {
 		if (err) {
 			console.error('Error:' + err);
 		} else {
@@ -56,7 +56,7 @@ exports.getMessageList = (req, res) => {
 				state: 1,
 				reply_list: 1,
 				create_time: 1,
-				update_time: 1,
+				// update_time: 1,
 			};
 			let options = {
 				skip: skip,

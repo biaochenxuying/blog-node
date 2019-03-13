@@ -32,7 +32,7 @@ exports.getUser = (req, res) => {
       const args = body.split('&');
       let arg = args[0].split('=');
       const access_token = arg[1];
-      console.log("body:",body);
+      // console.log("body:",body);
       console.log('access_token:', access_token);
       return access_token;
     })
@@ -271,7 +271,7 @@ exports.getUserList = (req, res) => {
     count: 0,
     list: [],
   };
-  User.countDocuments(conditions, (err, count) => {
+  User.countDocuments({}, (err, count) => {
     if (err) {
       console.error('Error:' + err);
     } else {

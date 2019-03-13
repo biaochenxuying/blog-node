@@ -38,12 +38,12 @@ exports.getLinkList = (req, res) => {
 			let fields = {
 				_id: 1,
 				name: 1,
-				desc: 1,
-				type: 1,
+				// desc: 1,
+				// type: 1,
 				url: 1,
 				icon: 1,
-				state: 1,
-				create_time: 1,
+				// state: 1,
+				// create_time: 1,
 			};
 			let options = {
 				skip: skip,

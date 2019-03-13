@@ -63,7 +63,7 @@ exports.GITHUB = {
   // client_id: '*****',
 	// client_secret: '*****',
 
-	// 开发环境 （参数可以直接用）
+	// 开发环境 （参数可以直接用，公供测试）
 	redirect_url: "http://localhost:3001/login",
   client_id: "502176cec65773057a9e",
 	client_secret: "65d444de381a026301a2c7cffb6952b9a86ac235",

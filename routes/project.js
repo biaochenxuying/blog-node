@@ -35,7 +35,7 @@ exports.getProjectList = (req, res) => {
     count: 0,
     list: [],
   };
-  Project.countDocuments(conditions, (err, count) => {
+  Project.countDocuments({}, (err, count) => {
     if (err) {
       console.error('Error:' + err);
     } else {
@@ -45,10 +45,10 @@ exports.getProjectList = (req, res) => {
         content: 1,
         img: 1,
         url: 1,
-        state: 1,
+        // state: 1,
         start_time: 1,
         end_time: 1,
-        update_time: 1,
+        // update_time: 1,
       }; // 待返回的字段
       let options = {
         skip: skip,
