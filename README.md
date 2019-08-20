@@ -65,6 +65,12 @@ npm start
 
 ## 项目常见问题
 
+
+### 管理后台登录
+
+管理后台登录是用 **邮箱加密码** 进行登录
+
+
 ### 管理员账号创建
 
 ![](https://upload-images.jianshu.io/upload_images/12890819-67861a912768e646.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -130,10 +136,6 @@ http://127.0.0.1:3000/register
 
 鉴于问问题的人有点多，笔者时间有限，处理不过来，大家可以加入 QQ 群：**186045338**，加群暗号：**全栈修炼** ，一起相互交流学习。
 
-对 **全栈修炼** 有兴趣的朋友可以扫下方二维码关注我的公众号
- 
-我会不定期更新有价值的内容，长期运营。
+笔者经常在这里 BB：
 
-关注公众号并回复 **福利** 可领取免费学习资料，福利详情请猛戳：  [Python、Java、Linux、Go、node、vue、react、javaScript](https://biaochenxuying.cn/articleDetail?article_id=5bf4ba3c245730373274df61)
-
-![全栈修炼](https://upload-images.jianshu.io/upload_images/12890819-bce9560fec5c49ea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![全栈修炼](https://upload-images.jianshu.io/upload_images/12890819-9399d149e09f638e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
