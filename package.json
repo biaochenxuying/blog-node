@@ -17,7 +17,7 @@
     "express-session": "^1.15.6",
     "http-errors": "~1.6.2",
     "mongodb": "^3.1.8",
-    "mongoose": "^5.3.7",
+    "mongoose": "^5.7.5",
     "mongoose-auto-increment": "^5.0.1",
     "morgan": "~1.9.0",
     "node-fetch": "^2.3.0",
