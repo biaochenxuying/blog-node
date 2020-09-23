@@ -6,8 +6,7 @@ blog-node 是采用了主流的前后端分离思想的，主里只讲 后端。
 
 效果请看 [https://biaochenxuying.cn](https://biaochenxuying.cn)
 
-项目详情请看这篇文章：
-[基于 node + express + mongodb 的 blog-node 项目文档说明](https://biaochenxuying.cn/articleDetail?article_id=5bf8c57185e0f13af26e7d0d)
+项目详情请看这篇文章：[基于 node + express + mongodb 的 blog-node 项目文档说明](https://biaochenxuying.cn/articleDetail?article_id=5bf8c57185e0f13af26e7d0d)
 
 ## 已经实现功能
 
@@ -128,6 +127,27 @@ http://127.0.0.1:3000/register
 - 6. [一次网站的性能优化之路 -- 天下武功，唯快不破](https://biaochenxuying.cn/articleDetail?article_id=5c8ca2d3b87b8a04f1860c9a)
 - 7. [Vue + TypeScript + Element 搭建简洁时尚的博客网站及踩坑记](https://biaochenxuying.cn/articleDetail?article_id=5c9d8ce5f181945ddd6b0ffc)
 - 8. [前端解决第三方图片防盗链的办法 - html referrer 访问图片资源403问题](https://biaochenxuying.cn/articleDetail?article_id=5cfcc6798090bd3c84138a08)
+
+
+## 服务器
+
+笔者觉得每个开发者都应该拥有自己的网站和服务器，这可是很酷的事情，学习 Linux、跑跑脚本、建站、搭博客啥的都行啊。
+
+因为笔者就有自己的服务器，而且有两台了，用于平时的学习，还搭建了自己的网站。
+
+有不少读者问过我，为什么我学的那么快的呢 ？ 怎么在一年内学了那么知识的...
+
+其实也没什么秘决，就是平时有自己的服务器了，就爱折腾，学到的知识能很快得到验证，所以学起来兴致高一点。
+
+特别是大三和大四的学生，买了服务器，搭建个项目给面试官看也香，对找工作和面试都加分，还可以熟悉技术栈。
+
+[想学得快，就得有自己的服务器来折腾才行（低于 1 折、89/年、229/3年，比学生机还便宜）](https://biaochenxuying.cn/articleDetail?article_id=5de65dd90283dc742f8f633a)
+
+比如笔者的两个网站：
+
+> https://biaochenxuying.cn/
+
+> https://www.kwgg2020.com/
 
 
 ## 最后
